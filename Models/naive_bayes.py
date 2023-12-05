@@ -14,6 +14,7 @@ class NaiveBayesClassifier:
         self.prob_classes = np.zeros((len(unique_labels),1))
         self.covariance_matrices = np.zeros((len(unique_labels),n,n))
         for idx,instance in enumerate(X_train):
+            print(idx)
             data_in_class[label_transform[y_train[idx]]].append(instance)
         for idx,data in enumerate(data_in_class):
             data = np.array(data)
