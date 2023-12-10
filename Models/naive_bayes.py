@@ -31,7 +31,7 @@ class NaiveBayesClassifier:
             max_prob_class = -1
             for idx in range(len(self.means)):
                 det_C = np.linalg.det(self.covariance_matrices[idx])
-                diff = (x-self.means[idx]).reshape((3,1))
+                diff = (x-self.means[idx]).reshape((128,1))
                 mult_b = np.matmul(np.linalg.inv(self.covariance_matrices[idx]),diff)
                 mult = np.matmul(diff.T,mult_b)
                 d = - (1/2)*np.log(det_C) - (1/2)*mult[0][0]
